@@ -1,0 +1,107 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "uad-ng",
+    "nameCn": "UAD-ng",
+    "repoName": "uad-ng-deploy-guide",
+    "oneLiner": "图形化的 Android 去臃肿工具，免 root 卸载系统预装应用",
+    "officialRepo": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+    "officialDocs": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki",
+    "stars": "9728",
+    "license": "GPL-3.0",
+    "highlights": [
+      "免 root，走 ADB",
+      "近万 star，列表持续维护",
+      "图形界面 + CLI 两种形态",
+      "按厂商/安全等级筛选",
+      "不上传任何用户数据",
+      "GPL-3.0"
+    ],
+    "mcpSupport": "项目本身不带 MCP；本仓库的 MCP server 提供安装、连接手机与回滚的步骤说明。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-11-04",
+    "verification": [
+      [
+        "README 确认免 root、ADB 连接与数据不上传",
+        "已核对 2026-11-04"
+      ],
+      [
+        "确认 release 提供 GUI 与 CLI 的 Windows/macOS/Linux 产物",
+        "已核对 2026-11-04"
+      ],
+      [
+        "未实测下载、连接手机与卸载操作",
+        "说明 2026-11-04"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-11-04"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-11-04"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fL -o uad-ng https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/releases/latest/download/uad-ng-linux",
+        "chmod +x uad-ng",
+        "./uad-ng"
+      ],
+      "stepsPs": [
+        "curl.exe -fL -o uad-ng-windows.exe https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/releases/latest/download/uad-ng-windows.exe",
+        "Get-Item uad-ng-windows.exe | Select-Object Name, Length",
+        "Start-Process .\\uad-ng-windows.exe"
+      ],
+      "source": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Getting-started"
+    },
+    "pitfalls": [
+      "列表空白：确认 USB 调试已开且手机已授权本机",
+      "识别不到设备：换数据线，或在开发者选项里切换 USB 配置",
+      "卸载后手机异常：用 `adb install-existing` 恢复，恢复不了只能刷机",
+      "误删关键包：只动标为 Recommended 的条目",
+      "macOS 打不开：在隐私与安全性里允许运行",
+      "CLI 权限不足：`chmod +x` 后再执行",
+      "列表更新失败：检查能否访问 GitHub"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/uad-ng-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/uad-ng-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "UAD-ng",
+    "UAD-ng 安装",
+    "安卓 去臃肿",
+    "卸载 预装应用",
+    "免 root 卸载",
+    "Android debloat",
+    "ADB 卸载 系统应用",
+    "手机 精简 工具",
+    "uad-ng 教程",
+    "UAD-ng deploy guide"
+  ],
+  "topics": [
+    "android",
+    "debloat",
+    "adb",
+    "privacy",
+    "rust",
+    "uad-ng"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "uad-ng-guide": {
+      "command": "node",
+      "args": [
+        "mcp-server.mjs"
+      ]
+    }
+  }
+}
